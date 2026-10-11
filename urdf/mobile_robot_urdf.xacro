@@ -1,0 +1,570 @@
+<?xml version="1.0" ?>
+<robot name="mobile_robot_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mobile_robot_urdf_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find mobile_robot_urdf_description)/urdf/mobile_robot_urdf.ros2control" />
+<xacro:include filename="$(find mobile_robot_urdf_description)/urdf/mobile_robot_urdf.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="8.514890106404672e-05 3.623995162311478e-05 0.0015000000000000002" rpy="0 0 0"/>
+    <mass value="0.5258991770146211"/>
+    <inertia ixx="0.000979" iyy="0.000981" izz="0.00196" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.15 0.15 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bracket_left_1">
+  <inertial>
+    <origin xyz="-0.01502015281466554 -0.003308520121501096 -0.00990689660740504" rpy="0 0 0"/>
+    <mass value="0.033521622477354275"/>
+    <inertia ixx="1.1e-05" iyy="1.1e-05" izz="1e-05" ixy="0.0" iyz="3e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.014964 -0.067036 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/bracket_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="bracket_right_1">
+  <inertial>
+    <origin xyz="-0.014979367282086343 0.0033090000247499585 -0.009906896607404066" rpy="0 0 0"/>
+    <mass value="0.033521622477354275"/>
+    <inertia ixx="1.1e-05" iyy="1.1e-05" izz="1e-05" ixy="0.0" iyz="-3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.014964 0.066964 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/bracket_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="motor_left2_1">
+  <inertial>
+    <origin xyz="-0.007789146780871378 -0.02425479888306685 0.013260229707158625" rpy="0 0 0"/>
+    <mass value="0.39262619034993484"/>
+    <inertia ixx="0.000125" iyy="5.9e-05" izz="0.000125" ixy="-0.0" iyz="2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.022214 -0.073536 0.040423" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/motor_left2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="motor_right2_1">
+  <inertial>
+    <origin xyz="-0.007710373315881664 0.0242552787863156 0.013260229671938621" rpy="0 0 0"/>
+    <mass value="0.39262619034993484"/>
+    <inertia ixx="0.000125" iyy="5.9e-05" izz="0.000125" ixy="-0.0" iyz="-2e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.022214 0.073464 0.040423" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/motor_right2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="esp32_1">
+  <inertial>
+    <origin xyz="-0.04051938872342101 -0.03503719200606067 0.004737264346740048" rpy="0 0 0"/>
+    <mass value="0.18093948587020942"/>
+    <inertia ixx="7.8e-05" iyy="8.8e-05" izz="0.000159" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.071036 -0.034911 -0.003" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/esp32_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_long_1_1">
+  <inertial>
+    <origin xyz="3.6239951375610646e-05 -0.13003576004837697 -0.008249999999999515" rpy="0 0 0"/>
+    <mass value="0.012362796321468155"/>
+    <inertia ixx="8e-06" iyy="8e-06" izz="1e-07" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.065 -0.065072 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_long_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_long_2_1">
+  <inertial>
+    <origin xyz="0.13003623995137553 -3.576004837685387e-05 -0.008249999999999515" rpy="0 0 0"/>
+    <mass value="0.012362796321468155"/>
+    <inertia ixx="8e-06" iyy="8e-06" izz="1e-07" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.065 -0.065072 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_long_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_long_3_1">
+  <inertial>
+    <origin xyz="3.623995137545799e-05 0.12996423995162307 -0.008249999999999515" rpy="0 0 0"/>
+    <mass value="0.012362796321468155"/>
+    <inertia ixx="8e-06" iyy="8e-06" izz="1e-07" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.065 0.064928 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_long_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_long_4_1">
+  <inertial>
+    <origin xyz="-0.12996376004862448 -3.576004837704816e-05 -0.008249999999999515" rpy="0 0 0"/>
+    <mass value="0.012362796321468155"/>
+    <inertia ixx="8e-06" iyy="8e-06" izz="1e-07" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.065 0.064928 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_long_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="bottom_mount_1">
+  <inertial>
+    <origin xyz="-6.738198218914069e-05 -3.57600483768759e-05 -0.051" rpy="0 0 0"/>
+    <mass value="0.5262783476129551"/>
+    <inertia ixx="0.000984" iyy="0.000981" izz="0.001964" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -7.2e-05 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/bottom_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="motor_driver_1">
+  <inertial>
+    <origin xyz="-0.01882578515348946 -0.019299464883619343 0.006055494423083119" rpy="0 0 0"/>
+    <mass value="0.06836704569322188"/>
+    <inertia ixx="1.1e-05" iyy="1.3e-05" izz="1.9e-05" ixy="0.0" iyz="-0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.036336 -0.019686 0.0495" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="caster_wheel_1">
+  <inertial>
+    <origin xyz="2.3995173005497694e-07 -0.019499760048375527 -0.005589787284160146" rpy="0 0 0"/>
+    <mass value="0.02892250291045274"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="2e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.058036 -0.019536 0.0525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/caster_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 -0.0195 -0.0056" rpy="0 0 0"/>
+    <geometry>
+      <sphere radius="0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="raspberry_mount_1">
+  <inertial>
+    <origin xyz="5.471504212329216e-05 -3.5760048377302364e-05 0.03149999999999999" rpy="0 0 0"/>
+    <mass value="0.5254776428875831"/>
+    <inertia ixx="0.000982" iyy="0.000981" izz="0.001962" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -7.2e-05 -0.003" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/raspberry_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_short_1_1">
+  <inertial>
+    <origin xyz="2.3995137560239854e-07 2.3995162441031725e-07 0.023000000000000277" rpy="0 0 0"/>
+    <mass value="0.006425860234887403"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-07" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.035036 0.034964 -0.033" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_short_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_short_2_1">
+  <inertial>
+    <origin xyz="2.3995137556770407e-07 2.399516244866451e-07 0.023000000000000277" rpy="0 0 0"/>
+    <mass value="0.006425860234887403"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-07" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.035036 -0.035036 -0.033" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_short_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_short_3_1">
+  <inertial>
+    <origin xyz="2.3995137549137624e-07 2.399516244519506e-07 0.023000000000000277" rpy="0 0 0"/>
+    <mass value="0.006425860234887403"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-07" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.034964 -0.035036 -0.033" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_short_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="threaded_rod_short_4_1">
+  <inertial>
+    <origin xyz="2.399513755260707e-07 2.399516243756228e-07 0.023000000000000277" rpy="0 0 0"/>
+    <mass value="0.006425860234887403"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-07" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.034964 0.034964 -0.033" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/threaded_rod_short_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="sensors_mount_1">
+  <inertial>
+    <origin xyz="3.6239951624435085e-05 -3.5760048372244134e-05 0.07450000000000001" rpy="0 0 0"/>
+    <mass value="0.1479094329997457"/>
+    <inertia ixx="7.7e-05" iyy="7.8e-05" izz="0.000155" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -7.2e-05 -0.003" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/sensors_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="raspberry_pi5_1">
+  <inertial>
+    <origin xyz="-0.05461897760112003 -0.024097529695069765 0.005301535409568334" rpy="0 0 0"/>
+    <mass value="0.14234850916382222"/>
+    <inertia ixx="4.1e-05" iyy="9.4e-05" izz="0.000128" ixy="1e-06" iyz="0.0" ixz="1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.011036 -0.024536 -0.036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/raspberry_pi5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="ia_hat_1">
+  <inertial>
+    <origin xyz="-0.028386538495723614 -0.027991977860418345 0.016208230959264" rpy="0 0 0"/>
+    <mass value="0.007822497699990197"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.011036 -0.024536 -0.0377" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/ia_hat_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="imu_bno055_1">
+  <inertial>
+    <origin xyz="-0.00772519011645508 -0.011236635441814833 0.0011132487781883166" rpy="0 0 0"/>
+    <mass value="0.007717572133230737"/>
+    <inertia ixx="1e-07" iyy="1e-07" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.007656 -0.010831 -0.079" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/imu_bno055_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="lidar_ld06_1">
+  <inertial>
+    <origin xyz="-0.023827558651632854 -0.02739533107511783 0.026867647805327716" rpy="0 0 0"/>
+    <mass value="0.4008555737772048"/>
+    <inertia ixx="0.000113" iyy="9.9e-05" izz="0.000116" ixy="1e-06" iyz="-2e-06" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.024536 -0.029036 -0.079" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/lidar_ld06_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="wheel_left_1">
+  <inertial>
+    <origin xyz="1.4996673687595052e-07 0.006039552288262903 1.3819249709834391e-08" rpy="0 0 0"/>
+    <mass value="0.2743051659238453"/>
+    <inertia ixx="0.00012" iyy="0.000202" izz="0.00012" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.029964 -0.094536 0.034" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0.006 0" rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder radius="0.034" length="0.026"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_1">
+  <inertial>
+    <origin xyz="2.2856960129810644e-07 -0.006039071604513516 1.3784029528896014e-08" rpy="0 0 0"/>
+    <mass value="0.2743051659238391"/>
+    <inertia ixx="0.00012" iyy="0.000202" izz="0.00012" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.029964 0.094464 0.034" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mobile_robot_urdf_description)/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 -0.006 0" rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder radius="0.034" length="0.026"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- Frames nuevos para los sensores (pegados a base_link) -->
+<link name="imu_frame"/>
+<joint name="imu_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="imu_frame"/>
+  <origin xyz="0 0 0.080" rpy="0 0 0"/>
+</joint>
+
+<link name="lidar_frame"/>
+<joint name="lidar_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="lidar_frame"/>
+  <origin xyz="0 0 0.105" rpy="0 0 0"/>
+</joint>
+
+<joint name="fixed_1" type="fixed">
+  <origin xyz="-0.014964 0.067036 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bracket_left_1"/>
+</joint>
+
+<joint name="fixed_2" type="fixed">
+  <origin xyz="-0.014964 -0.066964 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bracket_right_1"/>
+</joint>
+
+<joint name="fixed_3" type="fixed">
+  <origin xyz="-0.00725 0.0065 -0.040423" rpy="0 0 0"/>
+  <parent link="bracket_left_1"/>
+  <child link="motor_left2_1"/>
+</joint>
+
+<joint name="fixed_4" type="fixed">
+  <origin xyz="-0.00725 -0.0065 -0.040423" rpy="0 0 0"/>
+  <parent link="bracket_right_1"/>
+  <child link="motor_right2_1"/>
+</joint>
+
+<joint name="fixed_5" type="fixed">
+  <origin xyz="0.071036 0.034911 0.003" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="esp32_1"/>
+</joint>
+
+<joint name="fixed_6" type="fixed">
+  <origin xyz="0.065 0.065072 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="threaded_rod_long_1_1"/>
+</joint>
+
+<joint name="fixed_7" type="fixed">
+  <origin xyz="-0.065 0.065072 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="threaded_rod_long_2_1"/>
+</joint>
+
+<joint name="fixed_8" type="fixed">
+  <origin xyz="-0.065 -0.064928 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="threaded_rod_long_3_1"/>
+</joint>
+
+<joint name="fixed_9" type="fixed">
+  <origin xyz="0.065 -0.064928 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="threaded_rod_long_4_1"/>
+</joint>
+
+<joint name="fixed_10" type="fixed">
+  <origin xyz="0.0 7.2e-05 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bottom_mount_1"/>
+</joint>
+
+<joint name="fixed_11" type="fixed">
+  <origin xyz="0.036336 0.019614 -0.0495" rpy="0 0 0"/>
+  <parent link="bottom_mount_1"/>
+  <child link="motor_driver_1"/>
+</joint>
+
+<joint name="fixed_12" type="fixed">
+  <origin xyz="0.058036 0.019464 -0.0525" rpy="0 0 0"/>
+  <parent link="bottom_mount_1"/>
+  <child link="caster_wheel_1"/>
+</joint>
+
+<joint name="fixed_13" type="fixed">
+  <origin xyz="0.0 7.2e-05 0.003" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="raspberry_mount_1"/>
+</joint>
+
+<joint name="fixed_14" type="fixed">
+  <origin xyz="0.035036 -0.035036 0.03" rpy="0 0 0"/>
+  <parent link="raspberry_mount_1"/>
+  <child link="threaded_rod_short_1_1"/>
+</joint>
+
+<joint name="fixed_15" type="fixed">
+  <origin xyz="0.035036 0.034964 0.03" rpy="0 0 0"/>
+  <parent link="raspberry_mount_1"/>
+  <child link="threaded_rod_short_2_1"/>
+</joint>
+
+<joint name="fixed_16" type="fixed">
+  <origin xyz="-0.034964 0.034964 0.03" rpy="0 0 0"/>
+  <parent link="raspberry_mount_1"/>
+  <child link="threaded_rod_short_3_1"/>
+</joint>
+
+<joint name="fixed_17" type="fixed">
+  <origin xyz="-0.034964 -0.035036 0.03" rpy="0 0 0"/>
+  <parent link="raspberry_mount_1"/>
+  <child link="threaded_rod_short_4_1"/>
+</joint>
+
+<joint name="fixed_18" type="fixed">
+  <origin xyz="0.0 7.2e-05 0.003" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="sensors_mount_1"/>
+</joint>
+
+<joint name="fixed_19" type="fixed">
+  <origin xyz="0.011036 0.024464 0.033" rpy="0 0 0"/>
+  <parent link="raspberry_mount_1"/>
+  <child link="raspberry_pi5_1"/>
+</joint>
+
+<joint name="fixed_20" type="fixed">
+  <origin xyz="0.0 0.0 0.0017" rpy="0 0 0"/>
+  <parent link="raspberry_pi5_1"/>
+  <child link="ia_hat_1"/>
+</joint>
+
+<joint name="fixed_21" type="fixed">
+  <origin xyz="0.007656 0.010759 0.076" rpy="0 0 0"/>
+  <parent link="sensors_mount_1"/>
+  <child link="imu_bno055_1"/>
+</joint>
+
+<joint name="fixed_22" type="fixed">
+  <origin xyz="0.024536 0.028964 0.076" rpy="0 0 0"/>
+  <parent link="sensors_mount_1"/>
+  <child link="lidar_ld06_1"/>
+</joint>
+
+<joint name="revolute_23" type="continuous">
+  <origin xyz="-0.00775 0.021 0.006423" rpy="0 0 0"/>
+  <parent link="motor_left2_1"/>
+  <child link="wheel_left_1"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="1.0" velocity="3.3"/>
+</joint>
+
+<joint name="revolute_24" type="continuous">
+  <origin xyz="-0.00775 -0.021 0.006423" rpy="0 0 0"/>
+  <parent link="motor_right2_1"/>
+  <child link="wheel_right_1"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="1.0" velocity="3.3"/>
+</joint>
+
+</robot>

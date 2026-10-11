@@ -1,0 +1,22 @@
+build/
+install/
+log/
+__pycache__/
+*.pyc
+*.bak
+.vscode/
+frames*.pdf
+frames*.gv
+ 
+# Third-party meshes (not redistributed; see README)
+meshes/imu_bno055_1.stl
+meshes/motor_left2_1.stl
+meshes/motor_right2_1.stl
+meshes/raspberry_pi5_1.stl
+meshes/ia_hat_1.stl
+meshes/lidar_ld06_1.stl
+meshes/esp32_1.stl
+meshes/motor_driver_1.stl
+meshes/wheel_left_1.stl
+meshes/wheel_right_1.stl
+meshes/caster_wheel_1.stl
