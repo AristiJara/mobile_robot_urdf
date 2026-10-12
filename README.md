@@ -160,7 +160,7 @@ To get the full visual model, download each model from its source, export it as 
 | Raspberry Pi 5 | `raspberry_pi5_1.stl` | [GrabCAD](https://grabcad.com/library/raspberry-pi-5-2) |
 | Raspberry Pi AI HAT | `ia_hat_1.stl` | [GrabCAD](https://grabcad.com/library/raspberry-pi-ai-hat-1) |
 | LDRobot LD06 LiDAR | `lidar_ld06_1.stl` | [GrabCAD](https://grabcad.com/library/ldrobot-ld06-360-lidar-module-raspberry-pi-mounting-bracket-1) |
-| ESP32 board, motor driver, wheels, caster wheel | `esp32_1.stl`, `motor_driver_1.stl`, `wheel_*_1.stl`, `caster_wheel_1.stl` | TODO: add source |
+| ESP32 board, motor driver, caster wheel | `esp32_1.stl`, `motor_driver_1.stl`, `caster_wheel_1.stl` | TODO: add source |
 
 > Credit for these models goes to their original authors, listed on each GrabCAD page. The custom parts (chassis plates, brackets and standoffs) are included in `meshes/`.
 
