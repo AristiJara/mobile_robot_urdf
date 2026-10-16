@@ -44,7 +44,7 @@ def generate_launch_description():
                 '-allow_renaming', 'false',
                 '-x', '0.0',
                 '-y', '0.0',
-                '-z', '0.08',
+                '-z', '0.01',
                 '-Y', '0.0',
             ],
             output='screen'

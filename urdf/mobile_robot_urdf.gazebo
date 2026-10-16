@@ -66,7 +66,7 @@
     <odom_topic>/odom</odom_topic>
     <tf_topic>/tf</tf_topic>
     <frame_id>odom</frame_id>
-    <child_frame_id>base_link</child_frame_id>
+    <child_frame_id>base_footprint</child_frame_id>
     <max_linear_velocity>0.11</max_linear_velocity>
     <min_linear_velocity>-0.11</min_linear_velocity>
     <max_angular_velocity>1.1</max_angular_velocity>
